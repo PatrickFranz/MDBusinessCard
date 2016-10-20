@@ -8,7 +8,7 @@ body, div, p, a, label{
 }
 
 body{
-  font-family: 'Open Sans', 'sans-serif';
+  font-family: 'Lato', 'sans-serif';
   background-color: #e0ddd7
 }
 
@@ -80,6 +80,7 @@ input[type="checkbox"]{
 
 .card #front{
   background-image: url("../img/bg2.png");
+  padding: 20px 30px;
   color: #fff;
 }
 
@@ -115,7 +116,7 @@ input:checked + .card{
 #ico-flip{
   position: absolute;
   top: 20px;
-  right: 10px;
+  right: 35px;
 }
 
 #name-plate{
