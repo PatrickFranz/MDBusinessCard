@@ -1,0 +1,181 @@
+@mixin bc-rotatex($deg){
+  transform:         rotateX($deg);
+  -o-transform:      rotateX($deg);
+  -ms-transform:     rotateX($deg);
+  -moz-transform:    rotateX($deg);
+  -webkit-transform: rotateX($deg);
+}
+
+@mixin bc-backface-vis($vis){
+  -webkit-backface-visibility: $vis;
+  -moz-backface-visibility:    $vis;
+  -o-backface-visibility:      $vis;
+  -ms-backface-visibility:     $vis;
+  backface-visibility:         $vis;
+}
+
+@mixin bc-transform-style($style){
+  -webkit-transform-style: $style; 
+  -moz-transform-style:    $style; 
+  -ms-transform-style:     $style; 
+  -o-transform-style:      $style; 
+  transform-style:         $style; 
+}
+
+@mixin bc-perspective($distance){
+  -webkit-perspective: $distance;
+  -moz-perspective:    $distance;
+  -ms-perspective:     $distance;
+  -o-perspective:      $distance;
+  perspective:         $distance;
+}
+
+@mixin bc-transition($which, $time, $treatment){
+  -webkit-transition: $which $time $treatment;
+  -moz-transition:    $which $time $treatment;
+  -ms-transition:     $which $time $treatment;
+  -o-transition:      $which $time $treatment;
+  transition:         $which $time $treatment;
+}
+
+*{
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body, div, p, a, label{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Lato', 'sans-serif';
+  background-color: #e0ddd7;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
+#container{
+  display: block;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  height: 375px;
+  width: 630px;
+}
+
+label{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.card{  
+  height: 100%;
+  width: 100%;
+  @include bc-perspective(1000px);
+  @include bc-transform-style(perserve-3d);
+  @include bc-transition(all, 0.5s, ease-out);
+  background: transparent;
+}
+
+input[type="checkbox"]{
+  display: initial;
+}
+
+input:checked + .card #front{
+  @include bc-rotatex(180deg);
+}
+
+input:checked + .card #back{
+  transform: none;
+
+  &:hover{
+    box-shadow: 0px 5px 30px -5px #121212;
+    @include bc-rotatex(-20deg);    
+  }
+}
+
+#front, #back{
+  @include bc-backface-vis(hidden);
+  @include bc-transition(all, 0.5s, ease-out);
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px; 
+  padding: 0 2rem; 
+}
+
+.card #front{
+  background-image: url("../img/bg2.png");
+  padding: 20px 30px;
+  color: #fff;
+
+  &:hover{
+    box-shadow: 0px 5px 30px -5px #121212;
+    @include bc-rotatex(20deg);    
+  }
+ 
+}
+
+.card #back{
+  background-image: url("../img/redrocks.png");
+  color: #0a0a0a;
+  @include bc-rotatex(180deg);
+}
+
+.name{
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+.title{
+  font-weight: 300;
+  color: #cfcfcf;
+}
+
+#name-plate{
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  background: #FFA753;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+#about-text{
+  margin: 3rem 0 1rem 0;
+  font-size: 1.1rem;
+  color: #cecece;
+}
+
+.purple{
+  color: #a263ef;
+  margin-right: 2rem;
+}
+
+.flex-column{
+  float: left;
+  flex-direction: column;
+}
+
+#footer{
+  display: flex;
+  position: relative;
+  top: 2rem;
+}
+
+#footer img{
+  float: left;
+  margin-right: 10px;
+}
+
+#social{
+  margin-left: auto;
+  
+}
