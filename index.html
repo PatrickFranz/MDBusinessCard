@@ -10,31 +10,31 @@
   <div id='container'>
     <input id='flip' type="checkbox" />
     <div class="card">
-      <div id='front'>
-        <label for='flip'>
+      <div class='card__front'>
+        <label class="card__label-flip" for='flip'>
           <img id='ico-flip'    src="img/ic_autorenew_white_36px.svg" alt="Flip over">
         </label>        
-        <p class='name'>Patrick Franz</p>
-        <p class='title'>modern developer</p>
-        <div id='about-text'>
+        <p class='card__owner-name'>Patrick Franz</p>
+        <p class='card__owner-title'>modern developer</p>
+        <div class='card__about-text'>
           <p>Patrick loves to build magical things on the web. Always curious, forever wanting to try new things, a lover of adventure.</p><br>
           <p>Patrick is currently working as a freelance web developer.</p>
         </div>
-        <span class="purple">
+        <span class="card__text--purple">
           <a href="mailto:clymbing@gmailcom">clymbing@gmail.com</a>
         </span>
-        <span class="purple">
+        <span class="card__text--purple">
           <a href="http://patrickfranz.github.io/" target="_blank">www.patrickf.com</a>
         </span>
-        <div id='footer'>
+        <div id='card__footer'>
           <a href="https://encyclopedia.moderndeveloper.com/" target="_blank">
             <img src="img/enc2.png" alt="MD Encyclopedia Logo" />
-            <div class='flex-column'>
+            <div class='card--flex-column'>
               <p>Patrick Franz</p>
-              <p>on <span class='purple'>Encyclopedia.MD</span></p>
+              <p>on <span class='card__text--purple'>Encyclopedia.MD</span></p>
             </div>
           </a>
-          <div id='social'>
+          <div class='card__social-container'>
             <a href="https://www.twitter.com" target="_blank"><img src="img/twitter.png" alt="Twitter Icon"></a>
             <a href="https://www.github.com" target="_blank"><img src="img/github2.png" alt="GitHub Icon"></a>
             <a href="https://www.facebook.com" target="_blank"><img src="img/facebook.png" alt="Facebook Logo"></a>
@@ -42,11 +42,11 @@
           </div> 
         </div>
       </div>
-      <div id='back'>
-        <label for='flip'>
-          <img id='ico-flip'    src="img/ic_autorenew_white_36px.svg" alt="Flip over">
+      <div class='card__back'>
+        <label class="card__label-flip" for='flip'>
+          <img id='ico-flip' src="img/ic_autorenew_white_36px.svg" alt="Flip over">
         </label>
-        <p id="name-plate">patrick franz</p>
+        <p class="card__name-plate">patrick franz</p>
       </div>
     </div>
   </div>

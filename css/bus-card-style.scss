@@ -67,14 +67,6 @@ a{
   width: 630px;
 }
 
-label{
-  position: absolute;
-  top: 20px;
-  right: 10px;
-  background: transparent;
-  cursor: pointer;
-}
-
 .card{  
   height: 100%;
   width: 100%;
@@ -84,34 +76,25 @@ label{
   background: transparent;
 }
 
-input[type="checkbox"]{
-  display: initial;
+.card__label-flip{
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  background: transparent;
+  cursor: pointer;
 }
 
-input:checked + .card #front{
-  @include bc-rotatex(180deg);
-}
-
-input:checked + .card #back{
-  transform: none;
-
-  &:hover{
-    box-shadow: 0px 5px 30px -5px #121212;
-    @include bc-rotatex(-20deg);    
-  }
-}
-
-#front, #back{
+.card__front, .card__back{
   @include bc-backface-vis(hidden);
   @include bc-transition(all, 0.5s, ease-out);
   position: absolute;
   height: 100%;
   width: 100%;
   border-radius: 4px; 
-  padding: 0 2rem; 
+  padding: 0 2rem;
 }
 
-.card #front{
+.card__front{
   background-image: url("../img/bg2.png");
   padding: 20px 30px;
   color: #fff;
@@ -120,26 +103,43 @@ input:checked + .card #back{
     box-shadow: 0px 5px 30px -5px #121212;
     @include bc-rotatex(20deg);    
   }
- 
 }
 
-.card #back{
+.card__back{
   background-image: url("../img/redrocks.png");
   color: #0a0a0a;
   @include bc-rotatex(180deg);
 }
 
-.name{
+
+input[type="checkbox"]{
+  display: none;
+}
+
+input:checked + .card .card__front{
+  @include bc-rotatex(180deg);
+}
+
+input:checked + .card .card__back{
+  transform: none;
+
+  &:hover{
+    box-shadow: 0px 5px 30px -5px #121212;
+    @include bc-rotatex(-20deg);    
+  }
+}
+
+.card__owner-name{
   font-size: 3rem;
   font-weight: 400;
 }
 
-.title{
+.card__owner-title{
   font-weight: 300;
   color: #cfcfcf;
 }
 
-#name-plate{
+.card__name-plate{
   position: absolute;
   bottom: 15px;
   left: 10px;
@@ -148,34 +148,33 @@ input:checked + .card #back{
   border-radius: 3px;
 }
 
-#about-text{
+.card__about-text{
   margin: 3rem 0 1rem 0;
   font-size: 1.1rem;
   color: #cecece;
 }
 
-.purple{
+.card__text--purple{
   color: #a263ef;
   margin-right: 2rem;
 }
 
-.flex-column{
+.card--flex-column{
   float: left;
   flex-direction: column;
 }
 
-#footer{
+.card__footer{
   display: flex;
   position: relative;
   top: 2rem;
 }
 
-#footer img{
+.card__footer img{
   float: left;
   margin-right: 10px;
 }
 
-#social{
+.card__social-container{
   margin-left: auto;
-  
 }
